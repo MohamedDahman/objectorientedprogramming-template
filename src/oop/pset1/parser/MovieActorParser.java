@@ -58,6 +58,7 @@ public class MovieActorParser {
                 .collect(Collectors.toList());
 
         List<String> names = maleAndFemal;
+
         List<String > gender = maleAndFemal;
         String nameString = names.stream()
                 .filter(e-> e.contains("'name':"))

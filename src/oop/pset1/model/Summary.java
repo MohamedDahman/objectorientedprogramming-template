@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Summary {
 
-    private List<String> topMovieRate;
+    private List<Movie> topMovieRate;
     private List<String> mostHiredActors;
     private List<String> mostMovieGenres;
     private String maleFemaleRatio;
@@ -35,11 +35,11 @@ public class Summary {
         this.mostHiredActors = mostHiredActors;
     }
 
-    public List<String> getTopMovieRate() {
+    public List<Movie> getTopMovieRate() {
         return topMovieRate;
     }
 
-    public void setTopMovieRate(List<String> topMovieRate) {
+    public void setTopMovieRate(List<Movie> topMovieRate) {
         this.topMovieRate = topMovieRate;
     }
 

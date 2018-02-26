@@ -6,15 +6,19 @@ public class SummaryDisplayer {
 
     public void display(Summary summary) {
 
+
         System.out.println("The 5 most rated films (top to bottom)");
         summary.getTopMovieRate()
-                .forEach(e -> System.out.println(e));
+                .forEach(e -> System.out.println(e.getTitle()));
+
 
 
         System.out.println("----------------------------------------");
 
         System.out.println("The 5 most hired actors (top to bottom)");
-        summary.getMostHiredActors();
+
+        summary.getMostHiredActors()
+                .forEach(e ->System.out.println(e));
 
         System.out.println("----------------------------------------");
 
