@@ -30,7 +30,7 @@ public class MovieDatabaseSummarizer {
 
 
 
-    
+
     public static List<Movie> getTopMovieRate(List<Movie> originalList)
     {
         return originalList.stream()

@@ -2,7 +2,6 @@ package oop.pset1.parser;
 
 import oop.pset1.model.Actors;
 import oop.pset1.model.MovieActors;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -25,6 +24,7 @@ public class MovieActorParser {
             return lines.skip(1)
                     .map(line -> line.split(";"))
                     .filter(line -> line.length == 3 )
+                    //.peek(e-> System.out.println(e.toString()))
                     .filter(e -> e[0].toString().length()>2)
                     .map(toMovieList())
                     .collect(Collectors.toList());
@@ -74,7 +74,7 @@ public class MovieActorParser {
 
         names = Stream.of(nameString.split(",")).collect(Collectors.toList());
         gender  =Stream.of(genderString.split(",")).collect(Collectors.toList());
-        Map<String, String>  actorsMap = null;
+        //Map<String, String>  actorsMap = null;
         List<String> finalNames = names;
         List<String> finalGender = gender;
         Map<String, Integer> map = IntStream.range(0, names.size())
