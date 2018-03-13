@@ -8,7 +8,6 @@ public class ComputerPlayer implements Player {
     private Move movetype;
     @Override
     public Move getMove() {
-
         return movetype;
     }
 

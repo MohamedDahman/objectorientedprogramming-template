@@ -7,6 +7,4 @@ public interface Move {
     String getName();
     List<Move> whoCanDefeat();
 
-
-
 }

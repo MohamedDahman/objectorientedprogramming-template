@@ -24,14 +24,11 @@ public class MovieActorParser {
             return lines.skip(1)
                     .map(line -> line.split(";"))
                     .filter(line -> line.length == 3 )
-                    //.peek(e-> System.out.println(e.toString()))
                     .filter(e -> e[0].toString().length()>2)
                     .map(toMovieList())
                     .collect(Collectors.toList());
         } catch (IOException e) {
-
             e.printStackTrace();
-
             return new ArrayList<>();
 
         }
@@ -43,7 +40,6 @@ public class MovieActorParser {
             MovieActors movieActors = new MovieActors();
             movieActors.setId(Integer.parseInt(columns[2]));
             movieActors.setActorList(toActorList(columns[0]));
-
             return movieActors;
         };
     }
@@ -58,7 +54,6 @@ public class MovieActorParser {
                 .collect(Collectors.toList());
 
         List<String> names = maleAndFemal;
-
         List<String > gender = maleAndFemal;
         String nameString = names.stream()
                 .filter(e-> e.contains("'name':"))
@@ -83,6 +78,7 @@ public class MovieActorParser {
                         (m,i)-> m.put(finalNames.get(i),  Integer.parseInt(finalGender.get(i))),
                         Map::putAll);
         return  map;
+
     }
 
 
